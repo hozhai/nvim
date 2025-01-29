@@ -1,4 +1,4 @@
-# TheZhaiVim
+# nvim
 > A simple lightweight, quick, and nice Neovim config.
 
 ## Getting Started
