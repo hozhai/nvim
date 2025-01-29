@@ -6,7 +6,7 @@ return {
     {
         "windwp/nvim-ts-autotag",
         dependencies = "nvim-treesitter/nvim-treesitter",
-        ft = { "html", "ts", "js", "tsx", "jsx", "xml" },
+        ft = { "html", "ts", "js", "tsx", "jsx", "xml", "svelte" },
         lazy = true,
         event = "VeryLazy",
         config = function()
@@ -20,7 +20,7 @@ return {
                     enable = true,
                     filetypes = {
                         'html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'css', 'lua', 'xml',
-                        'markdown', 'php'
+                        'markdown', 'php', 'svelte'
                     }
                 },
                 indent = { enable = true }
