@@ -35,6 +35,7 @@ return {
 					"jsonls",
 					"gopls",
 					"svelte",
+					"vue_ls",
 					-- for java, see ftplugin/java.lua
 				},
 				automatic_installation = true,
@@ -49,9 +50,7 @@ return {
 			{ "antosha417/nvim-lsp-file-operations", config = true },
 		},
 		config = function()
-			local lspconfig = require("lspconfig")
 			local mason_lspconfig = require("mason-lspconfig")
-			local cmp_nvim_lsp = require("cmp_nvim_lsp")
 			local keymap = vim.keymap
 
 			vim.api.nvim_create_autocmd("LspAttach", {
@@ -106,19 +105,6 @@ return {
 						[severity.HINT] = signs.Hint,
 					},
 				},
-			})
-
-			mason_lspconfig.setup_handlers({
-				-- Will be called for each installed server that doesn't have
-				-- a dedicated handler.
-				--
-				function(server_name) -- default handler (optional)
-					-- https://github.com/neovim/nvim-lspconfig/pull/3232
-					local capabilities = cmp_nvim_lsp.default_capabilities()
-					require("lspconfig")[server_name].setup({
-						capabilities = capabilities,
-					})
-				end,
 			})
 		end,
 	},
