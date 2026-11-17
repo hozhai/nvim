@@ -22,13 +22,23 @@ return {
   --     vim.cmd.colorscheme("tokyonight-night")
   --   end
   -- }
+  -- {
+  --   "shaunsingh/nord.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  --   config = function()
+  --     vim.cmd.colorscheme("nord")
+  --   end
+  -- }
   {
-    "shaunsingh/nord.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
+    "navarasu/onedark.nvim",
+    priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      vim.cmd.colorscheme("nord")
+      require('onedark').setup {
+        style = 'darker'
+      }
+      require('onedark').load()
     end
   }
 }
